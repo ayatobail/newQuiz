@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
                 : Transition.cupertino,
             transitionDuration: Duration(milliseconds: 300),
             translations: AppTranlation(),
-            locale: Locale('ar', 'SA'),
-            fallbackLocale: Locale('ar', 'SA'),
+            locale:getocal(),
+            fallbackLocale: getocal(),
             builder: BotToastInit(), //1. call BotToastInit
             navigatorObservers: [BotToastNavigatorObserver()], //2
             debugShowCheckedModeBanner: false,
