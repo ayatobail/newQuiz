@@ -9,4 +9,5 @@ class AppColors {
    static Color blueColor = Color.fromRGBO(32, 196, 244, 1);
    static Color lightBlueColor = Color.fromRGBO(185, 229, 251, 1);
 
+
 }

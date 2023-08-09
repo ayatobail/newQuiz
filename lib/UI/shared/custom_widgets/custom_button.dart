@@ -29,12 +29,12 @@ class customButton extends StatelessWidget {
     },
       style: ElevatedButton.styleFrom(
           //shape: StadiumBorder(),
-          primary: primary??AppColors.purbleColor,
-          fixedSize: s??Size(screenWidth(1.2), screenHeight(7.5)),
+          primary: primary??AppColors.darkPurbleColor,
+          fixedSize: s??Size(screenWidth(1), screenWidth(8)),
 
       ),
       child:
-          Text(text,style: TextStyle(fontSize: textSize??screenWidth(8),color: textColor??AppColors.whiteColor),),
+          Text(text,style: TextStyle(fontSize: textSize??screenWidth(22),color: textColor??AppColors.whiteColor),),
 
       );
 
