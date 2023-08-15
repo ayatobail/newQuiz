@@ -5,7 +5,7 @@ import '../../enums/request_type.dart';
 import '../../utilies/general_utilies.dart';
 //مركزية لبعض الأمور الي رح تطلع بكل ريكويست عنا
 class NetworkConfig {
-  static String BASE_API = 'api/web/';
+  static String BASE_API = 'api/';
 
 
 

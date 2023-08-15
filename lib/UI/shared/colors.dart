@@ -8,5 +8,13 @@ class AppColors {
    static Color whiteColor = Color.fromRGBO(255, 255, 255, 1);
    static Color blueColor = Color.fromRGBO(32, 196, 244, 1);
    static Color lightBlueColor = Color.fromRGBO(185, 229, 251, 1);
+   static Color mainBlackColor = Color.fromARGB(255, 0, 0, 0);
+   static Color fieldColor = Color.fromRGBO(70, 69, 71, 0.03);
+   static Color TextFielColor = Color.fromRGBO(70, 69, 71, 0.5);
+
+
+
+
+
 
 }

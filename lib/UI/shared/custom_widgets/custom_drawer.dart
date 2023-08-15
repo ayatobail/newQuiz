@@ -1,7 +1,9 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 
 
+
+import '../../views/login_view/login_view.dart';
 import '../colors.dart';
 
 class CustomDrawer extends StatefulWidget {
@@ -19,7 +21,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
       padding: EdgeInsets.symmetric(
           vertical: size.width * 0.1, horizontal: size.width * 0.1),
       width: size.width * 0.65,
-      color: AppColors.mainWhiteColor,
+      color: AppColors.whiteColor,
       child: Column(
         children: [
           drawerItem(
@@ -29,7 +31,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: ((context) {
-                  return LoginView();
+                  return loginView();
                 })));
               }),
           drawerItem(
@@ -64,4 +66,4 @@ class _CustomDrawerState extends State<CustomDrawer> {
       ),
     );
   }
-}*/
+}
