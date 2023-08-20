@@ -10,7 +10,7 @@ import 'package:http_parser/http_parser.dart';
 
 
 class NetworkUtil {
-  static String baseUrl = 'b655-185-107-56-104.ngrok-free.app/api/register';
+  static String baseUrl = '6d90-5-0-32-200.ngrok-free.apprd';
   static var client = http.Client();
 
   static Future<dynamic> sendRequest({

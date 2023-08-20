@@ -13,15 +13,20 @@ import 'package:new_quiz/UI/views/signup_view/signup_view.dart';
 
 import '../../../core/translation/app_translation.dart';
 class loginView extends StatefulWidget {
-  const loginView({Key? key}) : super(key: key);
-
+  const loginView({Key? key, required this.name}) : super(key: key);
+final String name;
   @override
   _loginViewState createState() => _loginViewState();
 }
 
-loginController controller=loginController();
+
 
 class _loginViewState extends State<loginView> {
+  late loginController controller;
+  void initState() {
+    controller=Get.put(loginController(widget.name));
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
@@ -52,7 +57,7 @@ class _loginViewState extends State<loginView> {
                   children: [
                     Text(tr('key_userName'),style: TextStyle(fontSize: screenWidth(23),color: AppColors.darkPurbleColor),),
 
-                    customTextField(hintTExt: tr('key_userName'), controller: controller.emailController,validator: (value) {
+                    customTextField(hintTExt: tr('key_userName'), controller: controller.nameController,validator: (value) {
                       if (value!.isEmpty) {
                         return 'الرجاء إدخال اسم المستخدم';
                       }

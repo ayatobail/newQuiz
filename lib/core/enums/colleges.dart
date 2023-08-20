@@ -1,0 +1,5 @@
+enum COLLEGES{
+  ALL,
+  ENGINEERING,
+  MEDICINE,
+}

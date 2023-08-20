@@ -9,6 +9,7 @@ import 'package:new_quiz/UI/views/login_view/login_view.dart';
 import 'package:new_quiz/UI/views/splash_screen/splash_screen.dart';
 
 import '../UI/shared/utilis.dart';
+import '../UI/views/signup_view/signup_view.dart';
 import '../core/enums/connectivity_status.dart';
 import '../core/translation/app_translation.dart';
 import '../core/utilies/general_utilies.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
             navigatorObservers: [BotToastNavigatorObserver()], //2
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
-            home: loginView()));
+            home: storage.getUser()==""?signupView():loginView(name: storage.getUser())));
   }
 }
 

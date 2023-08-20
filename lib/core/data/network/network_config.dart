@@ -9,7 +9,7 @@ class NetworkConfig {
 
 
 
-  static String getFullApiUrl(String api)  {return BASE_API+api; }
+  static String getFullApiUrl(String api)  {return api; }
 
 
 //كلشي هيديرز لازميني بحطهم بالnetworkconfig.getheaders

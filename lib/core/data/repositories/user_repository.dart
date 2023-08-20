@@ -11,7 +11,7 @@ import '../network/network_config.dart';
 
 class UserRepository {
   Future<Either<String, loginModel>> login({//ازا صح بترجع موديل وازا لا بترجع string
-    required String email,
+    required String name,
     required String code,
   }) async {
     try {
@@ -19,7 +19,7 @@ class UserRepository {
         type: requestType.POST,
         url: UserEndpoints.login,
         body: {
-          'name': email,
+          'name': name,
           'login_code': code,
         },
         headers: NetworkConfig.getHeaders(needAuth: false),
@@ -42,7 +42,7 @@ class UserRepository {
   Future<Either<String, bool>> LogIn({
     required String userName,
     required String code,
-    r
+
   }) async {
     try {
       return NetworkUtil.sendMultipartRequest(
@@ -79,7 +79,7 @@ class UserRepository {
     try {
       return NetworkUtil.sendMultipartRequest(
         type: requestType.POST,
-        url: UserEndpoints.Register,
+        url: "https://6d90-5-0-32-200.ngrok-free.app/api/login",
         fields: {
           'name': userName,
           'mobile_phone': code,

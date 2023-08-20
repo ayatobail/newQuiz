@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:new_quiz/UI/views/login_view/login_view.dart';
 import 'package:new_quiz/UI/views/signup_view/signup_controller.dart';
 import '../../../core/translation/app_translation.dart';
+import '../../../core/utilies/general_utilies.dart';
 import '../../shared/colors.dart';
 import '../../shared/custom_widgets/custom_button.dart';
 import '../../shared/custom_widgets/custom_radioButton.dart';
@@ -60,14 +61,14 @@ class _signupViewState extends State<signupView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      tr('key_login'),
+                      "اسم المستخدم",
                       style: TextStyle(
                           fontSize: screenWidth(23),
                           color: AppColors.darkPurbleColor),
                     ),
                     customTextField(
-                      hintTExt: tr('key_login'),
-                      controller: controller.emailController,
+                      hintTExt: "اسم المستخدم",
+                      controller: controller.nameController,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'الرجاء إدخال اسم المستخدم';
@@ -104,44 +105,55 @@ class _signupViewState extends State<signupView> {
                             color: AppColors.darkPurbleColor),
                       ),
                     ),
+
+
                     Obx(() {
-                      return Row(
-                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          customRadiobutton(
-                              text: "الطب البشري",
-                              value: 1,
-                              group:
-                                  controller.specializationG.value,
-                              onChange: (value) => controller.setSelected(value)),
-                          customRadiobutton(
-                            text: "طب الأسنان",
-                            value: 2,
-                            group:
+                      return Wrap(
+                        alignment: WrapAlignment.center,
+                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            customRadiobutton(
+                                text: "الطب البشري",
+                                value: 1,
+                                group:
                                 controller.specializationG.value,
-                            onChange: (value) => controller.setSelected(value),
-                          ),
-                        ],
-                      );
-                    }),
-                    Obx(() {
-                      return Row(
-                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          customRadiobutton(
+                                onChange: (value) => controller.setSelected(value)),
+                            customRadiobutton(
+                              text: "طب الأسنان",
+                              value: 2,
+                              group:
+                              controller.specializationG.value,
+                              onChange: (value) => controller.setSelected(value),
+                            ),
+
+                            customRadiobutton(
+                                text: "كلية الصيدلة",
+                                value: 3,
+                                group:
+                                    controller.specializationG.value,
+                                onChange: (value) => controller.setSelected(value)),
+                            customRadiobutton(
                               text: "الهندسة المعلوماتية",
-                              value: 3,
+                              value: 4,
                               group:
                                   controller.specializationG.value,
-                              onChange: (value) => controller.setSelected(value)),
-                          customRadiobutton(
-                            text: "الهندسة المدنية",
-                            value: 4,
-                            group:
-                                controller.specializationG.value,
-                            onChange: (value) => controller.setSelected(value),
-                          ),
-                        ],
+                              onChange: (value) => controller.setSelected(value),
+                            ),
+                            customRadiobutton(
+                              text: "الهندسة المدنية",
+                              value: 5,
+                              group:
+                              controller.specializationG.value,
+                              onChange: (value) => controller.setSelected(value),
+                            ),
+                            customRadiobutton(
+                              text: "التمريض",
+                              value: 6,
+                              group:
+                              controller.specializationG.value,
+                              onChange: (value) => controller.setSelected(value),
+                            ),
+                        ]
                       );
                     }),
                     Padding(
@@ -161,7 +173,7 @@ class _signupViewState extends State<signupView> {
                           style: TextStyle(fontSize: screenWidth(25)),
                         ),
                         InkWell(
-                          onTap: (){Get.to(loginView());},
+                          onTap: (){Get.to(loginView(name: storage.getUser(),));},
                           child: Text(
                             "تسجيل الدخول",
                             style: TextStyle(

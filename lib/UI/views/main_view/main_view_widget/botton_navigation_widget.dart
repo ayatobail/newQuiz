@@ -30,7 +30,6 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
           width: screenWidth(1),
           height: screenHeight(6),
           decoration: BoxDecoration(
-              color: Colors.transparent,
               borderRadius: BorderRadius.circular(9)),
         ),
         Positioned(
@@ -77,65 +76,35 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     );
   }
 
-  Widget navItem(
-      {required String imagename,
-        required bool isslected,
-        required Function ontap}) {
-    return InkWell(
-      onTap: () {
-        ontap();
-      },
-      child: Column(
-        children: [
-          SvgPicture.asset(
-            'images/$imagename.svg',
-            color: AppColors.darkPurbleColor, // تحديد حجم الصورة بناءً على isSelected
-          ),
-          SizedBox(
-            height: screenWidth(50),
-          ),
-          isslected
-              ?
-          Container(
+
+}
+
+Widget navItem(
+    {required String imagename,
+      required bool isslected,
+      required Function ontap}) {
+  return InkWell(
+    onTap: () {
+      ontap();
+    },
+    child: Column(
+      children: [
+        SvgPicture.asset(
+          'images/$imagename.svg',
+          color: AppColors.darkPurbleColor, // تحديد حجم الصورة بناءً على isSelected
+        ),
+        SizedBox(
+          height: screenWidth(50),
+        ),
+        isslected
+            ?
+        Container(
             height: screenWidth(200),
             width: screenWidth(6), // تعديل ارتفاع الخط حسب الحاجة
             color:AppColors.darkPurbleColor // تحديد لون الخط بناءً على isSelected
-          ):
-          Container()
-        ],
-      ),
-    );
-  }
+        ):
+        Container()
+      ],
+    ),
+  );
 }
-
-//   Widget navItem({
-//     required String imageName,
-//     required bool isSelected,
-//     required Function onTap,
-//   }) {
-//     return GestureDetector(
-//       onTap: () {
-//         onTap();
-//       },
-//       child: Column(
-//         children: [
-//           SvgPicture.asset(
-//             'images/$imageName.svg',
-//             color: isSelected
-//                 ? AppColors.mainburbleColor
-//                 : AppColors.mainburbleColor,
-//             width: isSelected
-//                 ? screenWidth(20)
-//                 : screenWidth(15), // تحديد حجم الصورة بناءً على isSelected
-//           ),
-//           Container(
-//             height: 2, // تعديل ارتفاع الخط حسب الحاجة
-//             color: isSelected
-//                 ? AppColors.mainburbleColor
-//                 : Colors.transparent, // تحديد لون الخط بناءً على isSelected
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }

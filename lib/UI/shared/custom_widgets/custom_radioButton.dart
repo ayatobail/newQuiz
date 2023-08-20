@@ -1,7 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:new_quiz/UI/shared/colors.dart';
 import 'package:new_quiz/UI/shared/utilis.dart';
-import 'package:new_quiz/core/enums/specialization.dart';
+
 class customRadiobutton extends StatelessWidget {
   const customRadiobutton({Key? key,required this.text,required this.value,required this.onChange, required this.group}) : super(key: key);
  final String text;
@@ -11,19 +12,22 @@ class customRadiobutton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Row(
-        children: [
-          Radio(value:value,
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Transform.scale(
+          scale: screenWidth(500),
+          child: Radio(value:value,
               groupValue:group,
               onChanged: onChange,
           activeColor: AppColors.darkPurbleColor,),
-
-          Text(text,style: TextStyle(fontSize: screenWidth(25)),)
-        ],
+        ),
 
 
-      ),
+        Text(text,style: TextStyle(fontSize: screenWidth(32)),)
+      ],
+
+
     );
   }
 }

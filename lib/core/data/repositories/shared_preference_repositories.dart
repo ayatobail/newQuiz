@@ -21,6 +21,7 @@ class sharedPreferenceRepository{
   String PREF_CART_LIST = 'cart_list';
   String PREF_ORDER_PLACED = 'order_placed';
   String PREF_SUB_STATUS = 'sub_status';
+  String PREF_USER = 'USER';
 
 
   setSubStatus(bool value) {
@@ -31,6 +32,21 @@ class sharedPreferenceRepository{
     );
   }
 
+  setUser(String value) {
+    setPrefrence(
+      dataType: DataType.STRING,
+      key: PREF_USER,
+      value: value,
+    );
+  }
+
+  String getUser() {
+    if (globalSharedPrefs.containsKey(PREF_USER)) {
+      return getPrference(key: PREF_USER);
+    } else {
+      return "";
+    }
+  }
   bool getSubStatus() {
     if (globalSharedPrefs.containsKey(PREF_SUB_STATUS)) {
       return getPrference(key: PREF_SUB_STATUS);
