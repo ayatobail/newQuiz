@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:new_quiz/UI/shared/colors.dart';
 import 'package:new_quiz/UI/shared/custom_widgets/custom_button.dart';
+import 'package:new_quiz/UI/views/questions/questions.dart';
 
+import '../../../screens/quiz/quiz_screen.dart';
 import '../../shared/utilis.dart';
 import '../main_view/main_view_widget/custom_appBar.dart';
 class collegeQuestions extends StatefulWidget {
@@ -17,7 +21,7 @@ class _collegeQuestionsState extends State<collegeQuestions> {
   Widget build(BuildContext context) {
     return SafeArea(child:
     Scaffold(
-      appBar: customAppbar( text: widget.collegeName+"/"+widget.subject, height: screenWidth(3.2) ,),
+      appBar: customAppbar( text: widget.collegeName+"/"+widget.subject, height: screenWidth(3.2) ,color: AppColors.blueColor,),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: screenWidth(17)),
         child: Column(
@@ -26,7 +30,8 @@ class _collegeQuestionsState extends State<collegeQuestions> {
               padding:  EdgeInsets.only(top: screenWidth(5),bottom: screenWidth(7)),
               child: customButton(text: "دورات",textColor: AppColors.whiteColor,primary: AppColors.blueColor,),
             ),
-            customButton(text: "أسئلة الكتاب",textColor: AppColors.whiteColor,primary: AppColors.darkPurbleColor,),
+            customButton(text: "أسئلة الكتاب",textColor: AppColors.whiteColor,primary: AppColors.darkPurbleColor,onPressed: () => Get.to(QuizScreen()),
+            ),
           ],
         ),
       ),

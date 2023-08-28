@@ -49,7 +49,7 @@ class _ProfileState extends State<Profile> {
             ),
             rowitem(
                 svgname: 'edit',
-                text: tr('profile_information'),
+                text: "المعلومات الشخصية",
                 color: AppColors.darkPurbleColor,
                 ontap: () {
                   Get.to(PersonalInformation());

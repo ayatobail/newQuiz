@@ -22,13 +22,13 @@ class _collegeDetailsState extends State<collegeDetails> {
   Widget build(BuildContext context) {
     return SafeArea(child:
     Scaffold(
-      appBar: customAppbar( text: widget.collegeName, height: screenWidth(3.2) ,),
+      appBar: customAppbar( text: widget.collegeName, height: screenWidth(3.2) ,color: AppColors.blueColor,),
       body: Padding(
         padding:EdgeInsets.symmetric(horizontal: screenWidth(17)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            customTextField(hintTExt: "بحث", controller: controller,prefixIcon: Icons.search,colorText: AppColors.TextFielColor,colorfield: AppColors.fieldColor,),
+           // customTextField(hintTExt: "بحث", controller: controller,prefixIcon: Icons.search,colorText: AppColors.TextFielColor,colorfield: AppColors.fieldColor,),
             SvgPicture.asset('images/ad-section.svg'),
             Padding(
               padding: EdgeInsets.symmetric(vertical: screenWidth(80)),

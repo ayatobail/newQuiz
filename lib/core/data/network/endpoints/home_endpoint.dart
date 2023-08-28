@@ -1,6 +1,6 @@
 import '../network_config.dart';
 
 class HomeEndpoints{
-  static String allColleges = NetworkConfig.getFullApiUrl('colleges/all');
+  static String allSpecializations = NetworkConfig.getFullApiUrl('Specialization/allSpecialization');
 
 }

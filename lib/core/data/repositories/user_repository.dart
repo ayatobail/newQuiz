@@ -79,7 +79,7 @@ class UserRepository {
     try {
       return NetworkUtil.sendMultipartRequest(
         type: requestType.POST,
-        url: "https://6d90-5-0-32-200.ngrok-free.app/api/login",
+        url: UserEndpoints.Register,
         fields: {
           'name': userName,
           'mobile_phone': code,

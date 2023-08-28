@@ -46,6 +46,10 @@ dependencies:
   google_maps_flutter: ^2.1.0
   firebase_core: ^1.12.0
   firebase_messaging: ^11.0.0
+  dots_indicator: ^2.1.0
+  carousel_slider: ^4.2.1
+  fancy_shimmer_image: ^2.0.0+2
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -100,6 +104,7 @@ flutter:
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
+
   #         weight: 700
   #
   # For details regarding fonts from package dependencies,

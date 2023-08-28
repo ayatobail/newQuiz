@@ -26,7 +26,7 @@ bool get isOnline =>
 
 void checkConnection(Function function) {
   if (isOnline)
-    function();
+   { function();}
   else {
     customToast.showMessage(
         message: 'Please check internet connection',

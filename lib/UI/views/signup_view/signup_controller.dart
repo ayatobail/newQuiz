@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:new_quiz/UI/shared/custom_widgets/custom_toast.dart';
 import 'package:new_quiz/UI/views/login_view/login_view.dart';
+import 'package:new_quiz/UI/views/main_view/main_view.dart';
 import 'package:new_quiz/core/services/base_controller.dart';
 import 'package:new_quiz/core/utilies/general_utilies.dart';
 
@@ -24,26 +25,21 @@ class sinupController extends BaseController{
 
   }
 
-
   Future<void> register()  async {
-    var request = http.MultipartRequest(
-        'POST', Uri.parse('https://6d90-5-0-32-200.ngrok-free.app/api/register'));
-    request.fields.addAll({
-      'name': nameController.text,
-      'mobile_phone': phoneController.text,
-      'specialization_id': specializationG.string
-    });
-
-    customLoader();
-    http.StreamedResponse response = await request.send();
-
-    if (response.statusCode == 404) {
-      BotToast.closeAllLoading();
-      Get.to(loginView(name: nameController.text,));
-
-    }
-    else {
-      print(response.reasonPhrase);
+    if (formKey.currentState!.validate()) {
+      customLoader();
+      UserRepository().register(userName: nameController.text,
+          code: phoneController.text,
+          specialization: specializationG.string
+      ).then((value) {
+        value.fold((l) {
+          customToast.showMessage(
+              message: l, messageType: MessageType.REJECTED);
+        }, (r) {
+          BotToast.closeAllLoading();
+          Get.off(MainView(), transition: Transition.cupertino);
+        });
+      });
     }
   }
 }

@@ -40,7 +40,7 @@ class customToast{
          // final size = MediaQuery.of(context).size;
           return Container(
             width: screenWidth(3),
-            height: screenHeight(3),
+            height: screenHeight(2),
             decoration: BoxDecoration(
                 color: AppColors.whiteColor,
                 borderRadius: BorderRadius.circular(20),

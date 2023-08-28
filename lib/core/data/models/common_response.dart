@@ -11,7 +11,7 @@ class CommonResponse<T> {
       } else {
         if (json['response'] != null &&
             json['response'] is Map && //formated json  بقابلها  map
-            json['response']['title'] != null) {
+            json['response']['message'] != null) {
           this.message = json['response']['title'];
         } else {
           switch (statusCode) {

@@ -40,7 +40,7 @@ void customLoader() => BotToast.showCustomLoading(toastBuilder: (builder) {
     width: screenWidth(5),
     height: screenWidth(5),
     decoration: BoxDecoration(
-        color: AppColors.blackColor.withOpacity(0.5),
+        color: AppColors.darkPurbleColor.withOpacity(0.5),
         borderRadius: BorderRadius.circular(15)),
     child: SpinKitCircle(color: AppColors.purbleColor),
   );

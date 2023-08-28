@@ -5,14 +5,15 @@ import 'package:new_quiz/UI/shared/colors.dart';
 
 import '../../../shared/utilis.dart';
 class customAppbar extends StatelessWidget implements PreferredSizeWidget {
-  const customAppbar({Key? key,  this.icon, required this.text, required this.height}) : super(key: key);
+  const customAppbar({Key? key,  this.icon, required this.text, required this.height, this.color}) : super(key: key);
 final double height;
 final SvgPicture? icon;
 final String text;
+final Color? color;
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      flexibleSpace: SvgPicture.asset("images/shapeMaker.svg",fit: BoxFit.cover,color: AppColors.blueColor,),
+      flexibleSpace: SvgPicture.asset("images/shapeMaker.svg",fit: BoxFit.cover,color: color,),
       backgroundColor: Colors.transparent,
       elevation: 0,
   automaticallyImplyLeading: false,
